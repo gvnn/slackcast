@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="it.gvnn.slackcast.SearchActivity"
+            android:label="@string/title_activity_search"
+            android:parentActivityName="it.gvnn.slackcast.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.gvnn.slackcast.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
