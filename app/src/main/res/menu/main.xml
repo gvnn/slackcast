@@ -6,6 +6,6 @@
         android:id="@+id/menu_search"
         android:orderInCategory="1"
         android:icon="@drawable/ic_search_white"
-        android:title="Search"
+        android:title="@string/menu_main_search_text"
         app:showAsAction="ifRoom"/>
 </menu>
