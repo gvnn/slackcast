@@ -12,15 +12,14 @@ public class PodcastSearchClientFactory {
     private static PodcastSearchClientFactory instance = null;
     private RequestQueue mRequestQueue;
 
-    protected PodcastSearchClientFactory(java.io.File rootDirectory) {
+    public PodcastSearchClientFactory(java.io.File rootDirectory) {
         // Instantiate the cache
         Cache cache = new DiskBasedCache(rootDirectory, 1024 * 1024); // 1MB cap
-        // Set up the network to use HttpURLConnection as the HTTP client.
-        Network network = new BasicNetwork(new HurlStack());
-        // Instantiate the RequestQueue with the cache and network.
-        mRequestQueue = new RequestQueue(cache, network);
-        // Start the queue
-        mRequestQueue.start();
+        setUpQueue(cache);
+    }
+
+    public PodcastSearchClientFactory(Cache cache) {
+        setUpQueue(cache);
     }
 
     public static PodcastSearchClientFactory getInstance(java.io.File rootDirectory) {
@@ -30,9 +29,27 @@ public class PodcastSearchClientFactory {
         return instance;
     }
 
+    public static PodcastSearchClientFactory getInstance(Cache cache) {
+        if (instance == null) {
+            instance = new PodcastSearchClientFactory(cache);
+        }
+        return instance;
+    }
+
+    public void setUpQueue(Cache cache) {
+        // Set up the network to use HttpURLConnection as the HTTP client.
+        Network network = new BasicNetwork(new HurlStack());
+        // Instantiate the RequestQueue with the cache and network.
+        mRequestQueue = new RequestQueue(cache, network);
+        // Start the queue
+        mRequestQueue.start();
+    }
+
     public PodcastSearchClient getSearchClient(Services service) {
         if (service == Services.GPODDER)
-            return gPodderPodcastSearchClient.getInstance(mRequestQueue);
+            return GPodderPodcastSearchClient.getInstance(mRequestQueue);
         return null;
     }
+
+
 }
