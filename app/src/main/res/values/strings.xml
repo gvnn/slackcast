@@ -3,4 +3,6 @@
     <string name="app_name">slackcast</string>
     <string name="title_activity_search">Search</string>
     <string name="menu_main_search_text">Search</string>
+    <string name="search_label">Search</string>
+    <string name="search_hint">Show name...</string>
 </resources>
