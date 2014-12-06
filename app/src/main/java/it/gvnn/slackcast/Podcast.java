@@ -9,4 +9,8 @@ public class Podcast {
     String url;
     @SerializedName("logo_url")
     String logoUrl;
+
+    public String getTitle() {
+        return title;
+    }
 }

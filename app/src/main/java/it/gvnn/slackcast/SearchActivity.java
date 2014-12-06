@@ -11,7 +11,13 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 
+import com.android.volley.VolleyError;
+
+import it.gvnn.slackcast.search.PodcastSearchClient;
+import it.gvnn.slackcast.search.PodcastSearchClientFactory;
+import it.gvnn.slackcast.search.SearchResultListener;
 import it.gvnn.slackcast.search.SearchResultsAdapter;
+import it.gvnn.slackcast.search.Services;
 
 
 public class SearchActivity extends ActionBarActivity {
@@ -22,6 +28,8 @@ public class SearchActivity extends ActionBarActivity {
     private RecyclerView mRecyclerView;
     private SearchResultsAdapter mSearchAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private PodcastSearchClientFactory mPodcastSearchClientFactory;
+    private PodcastSearchClient mPodcastSearchClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,17 +46,30 @@ public class SearchActivity extends ActionBarActivity {
 
     private void doMySearch(String query) {
         Log.d(TAG, query);
-        mSearchAdapter.updateDataset(new String[]{
-                "primo", "secondo"
+        mPodcastSearchClient.search(query, new SearchResultListener() {
+            @Override
+            public void onResult(PodcastSearchResponse response) {
+                mSearchAdapter.updateDataset(response);
+                mSearchAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onError(VolleyError error) {
+
+            }
         });
-        mSearchAdapter.notifyDataSetChanged();
     }
 
     private void handleIntent(Intent intent) {
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+
+            PodcastSearchClientFactory mPodcastSearchClientFactory = PodcastSearchClientFactory.getInstance(getCacheDir());
+            mPodcastSearchClient = mPodcastSearchClientFactory.getSearchClient(Services.GPODDER);
+
             String query = intent.getStringExtra(SearchManager.QUERY);
             mToolbar.setTitle(query);
             doMySearch(query);
+
         }
     }
 
@@ -61,7 +82,6 @@ public class SearchActivity extends ActionBarActivity {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-
         InitializeUI();
     }
 

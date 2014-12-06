@@ -1,31 +1,25 @@
 package it.gvnn.slackcast.search;
 
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import it.gvnn.slackcast.PodcastSearchResponse;
 import it.gvnn.slackcast.R;
 
 public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdapter.ViewHolder> {
 
-    private String[] mDataset;
-
-    // Provide a suitable constructor (depends on the kind of dataset)
-    public SearchResultsAdapter(String[] myDataset) {
-        mDataset = myDataset;
-    }
+    private PodcastSearchResponse mDataset;
 
     public SearchResultsAdapter() {
-        mDataset = new String[0];
+        mDataset = new PodcastSearchResponse();
     }
 
-    public void updateDataset(String[] strings) {
-        mDataset = strings;
+    public void updateDataset(PodcastSearchResponse results) {
+        mDataset = results;
     }
 
     // Create new views (invoked by the layout manager)
@@ -40,15 +34,13 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
-        holder.setText(mDataset[position]);
+        holder.setText(mDataset.get(position).getTitle());
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return mDataset.length;
+        return mDataset.size();
     }
 
     // Provide a reference to the views for each data item
