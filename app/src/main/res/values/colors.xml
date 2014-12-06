@@ -2,9 +2,10 @@
     <color name="myPrimaryColor">#673AB7</color>
     <color name="myPrimaryDarkColor">#512DA8</color>
     <color name="myAccentColor">#D1C4E9</color>
-    <color name="myDrawerBackground">#E8F5E9</color>
-    <color name="myWindowBackground">#E8F5E9</color>
+    <color name="myDrawerBackground">#FFF8E1</color>
+    <color name="myWindowBackground">#FFF8E1</color>
     <color name="myTextPrimaryColor">#FFFFFF</color>
+    <color name="myTextSecondaryColor">#cc000000</color>
     <color name="myNavigationColor">#cc000000</color>
     <color name="selected_gray">#D1C4E9</color>
 </resources>
