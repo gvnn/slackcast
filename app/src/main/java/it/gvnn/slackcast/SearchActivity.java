@@ -15,9 +15,10 @@ import com.android.volley.VolleyError;
 
 import it.gvnn.slackcast.search.PodcastSearchClient;
 import it.gvnn.slackcast.search.PodcastSearchClientFactory;
-import it.gvnn.slackcast.search.SearchResultListener;
+import it.gvnn.slackcast.search.PodcastSearchResponse;
 import it.gvnn.slackcast.search.SearchResultsAdapter;
 import it.gvnn.slackcast.search.Services;
+import it.gvnn.slackcast.utils.VolleyResultListener;
 
 
 public class SearchActivity extends ActionBarActivity {
@@ -46,7 +47,7 @@ public class SearchActivity extends ActionBarActivity {
 
     private void doMySearch(String query) {
         Log.d(TAG, query);
-        mPodcastSearchClient.search(query, new SearchResultListener() {
+        mPodcastSearchClient.search(query, new VolleyResultListener<PodcastSearchResponse>() {
             @Override
             public void onResult(PodcastSearchResponse response) {
                 mSearchAdapter.updateDataset(response);

@@ -1,0 +1,61 @@
+[
+    {
+        "author": "Chicago Public Media",
+        "common_title": null,
+        "content_types": [
+            "audio"
+        ],
+        "description": "Official free, weekly podcast of the award-winning radio show \"This American Life.\" First-person stories and short fiction pieces that are touching, funny, and surprising. Hosted by Ira Glass, from WBEZ Chicago Public Media, and distributed by Public Radio International. In mp3 and updated Mondays.",
+        "episodes": [
+            {
+                "author": "Chicago Public Media",
+                "content": "We bring you our sort-of-annual holiday tradition: The Poultry Slam! Stories of what happens when humans and fowl collide, including the tale of one notorious turkey who unleashed a long reign of terror on an unsuspecting neighborhood.",
+                "content_types": [
+                    "audio"
+                ],
+                "description": "We bring you our sort-of-annual holiday tradition: The Poultry Slam! Stories of what happens when humans and fowl collide, including the tale of one notorious turkey who unleashed a long reign of terror on an unsuspecting neighborhood.<div class=\"feedflare\">\n<a href=\"http://feeds.thisamericanlife.org/~ff/talpodcast?a=MWQqB91BaWY:Fx4ksPv_3qM:yIl2AUoC8zA\"><img border=\"0\" src=\"http://feeds.feedburner.com/~ff/talpodcast?d=yIl2AUoC8zA\" /></a> <a href=\"http://feeds.thisamericanlife.org/~ff/talpodcast?a=MWQqB91BaWY:Fx4ksPv_3qM:F7zBnMyn0Lo\"><img border=\"0\" src=\"http://feeds.feedburner.com/~ff/talpodcast?i=MWQqB91BaWY:Fx4ksPv_3qM:F7zBnMyn0Lo\" /></a> <a href=\"http://feeds.thisamericanlife.org/~ff/talpodcast?a=MWQqB91BaWY:Fx4ksPv_3qM:7Q72WNTAKBA\"><img border=\"0\" src=\"http://feeds.feedburner.com/~ff/talpodcast?d=7Q72WNTAKBA\" /></a> <a href=\"http://feeds.thisamericanlife.org/~ff/talpodcast?a=MWQqB91BaWY:Fx4ksPv_3qM:V_sGLiPBpWU\"><img border=\"0\" src=\"http://feeds.feedburner.com/~ff/talpodcast?i=MWQqB91BaWY:Fx4ksPv_3qM:V_sGLiPBpWU\" /></a> <a href=\"http://feeds.thisamericanlife.org/~ff/talpodcast?a=MWQqB91BaWY:Fx4ksPv_3qM:qj6IDK7rITs\"><img border=\"0\" src=\"http://feeds.feedburner.com/~ff/talpodcast?d=qj6IDK7rITs\" /></a> <a href=\"http://feeds.thisamericanlife.org/~ff/talpodcast?a=MWQqB91BaWY:Fx4ksPv_3qM:gIN9vFwOqvQ\"><img border=\"0\" src=\"http://feeds.feedburner.com/~ff/talpodcast?i=MWQqB91BaWY:Fx4ksPv_3qM:gIN9vFwOqvQ\" /></a>\n</div><img alt=\"\" height=\"1\" src=\"http://feeds.feedburner.com/~r/talpodcast/~4/MWQqB91BaWY\" width=\"1\" />",
+                "duration": null,
+                "files": [
+                    {
+                        "filesize": 0,
+                        "mimetype": "audio/mpeg",
+                        "urls": [
+                            "http://feeds.thisamericanlife.org/~r/talpodcast/~5/gM_BgG5LFFE/452.mp3"
+                        ]
+                    }
+                ],
+                "flattr": null,
+                "guid": "http://www.thisamericanlife.org/5450 at http://www.thisamericanlife.org",
+                "language": null,
+                "license": null,
+                "link": "http://feeds.thisamericanlife.org/~r/talpodcast/~3/MWQqB91BaWY/poultry-slam-2011",
+                "number": null,
+                "released": 1417392000,
+                "short_title": null,
+                "subtitle": "We bring you our sort-of-annual holiday tradition: The Poultry Slam! Stories of what happens when humans and fowl collide, including the tale of one notorious turkey who unleashed a long reign of terror on an unsuspecting neighborhood.",
+                "title": "#452: Poultry Slam 2011"
+            }
+        ],
+        "errors": {},
+        "flattr": null,
+        "http_etag": "NwkIqxISUtjnghR/2RdclaTZdD0",
+        "http_last_modified": "Sun, 07 Dec 2014 02:32:24 GMT",
+        "hub": "http://pubsubhubbub.appspot.com/",
+        "language": "en",
+        "license": null,
+        "link": "http://www.thisamericanlife.org",
+        "logo": "http://www.thisamericanlife.org/sites/all/themes/thislife/images/logo-square-1400.jpg",
+        "new_location": null,
+        "subtitle": "Official free, weekly podcast of the award-winning radio show \"This American Life.\" First-person stories and short fiction pieces that are touching, funny, and surprising. Hosted by Ira Glass, from WBEZ Chicago Public Media, and distributed by Public Radi",
+        "tags": [
+            "Arts",
+            "Society & Culture",
+            "News & Politics"
+        ],
+        "title": "This American Life",
+        "urls": [
+            "http://feeds.thisamericanlife.org/talpodcast"
+        ],
+        "warnings": {}
+    }
+]
