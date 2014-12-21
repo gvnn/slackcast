@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">slackcast</string>
     <string name="title_activity_search">Search</string>
     <string name="menu_main_search_text">Search</string>
     <string name="search_label">Search</string>
     <string name="search_hint">Show name...</string>
+    <string name="title_activity_podcast">PodcastActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="podcast_detail_title">Podcast Title</string>
+
 </resources>
