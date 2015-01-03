@@ -9,7 +9,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import it.gvnn.slackcast.R;
-import it.gvnn.slackcast.model.Podcast;
+import it.gvnn.slackcast.data.rest.Podcast;
 
 public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdapter.ViewHolder> {
 

@@ -1,10 +1,12 @@
-package it.gvnn.slackcast.model;
+package it.gvnn.slackcast.data.rest;
 
 import com.google.gson.annotations.SerializedName;
 
 import org.joda.time.DateTime;
 
-public class Episode {
+import java.io.Serializable;
+
+public class Episode implements Serializable {
     String title;
     String url;
     @SerializedName("podcast_title")

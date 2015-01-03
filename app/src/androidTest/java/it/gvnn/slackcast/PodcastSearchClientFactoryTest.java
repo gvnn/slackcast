@@ -2,21 +2,25 @@ package it.gvnn.slackcast;
 
 import com.android.volley.toolbox.NoCache;
 
-import junit.framework.TestCase;
-
-import java.io.File;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
+import org.robolectric.annotation.Config;
 
 import it.gvnn.slackcast.search.GPodderPodcastSearchClient;
 import it.gvnn.slackcast.search.PodcastSearchClient;
 import it.gvnn.slackcast.search.PodcastSearchClientFactory;
 import it.gvnn.slackcast.search.Services;
 
-public class PodcastSearchClientFactoryTest extends TestCase {
+import static org.assertj.core.api.Assertions.assertThat;
 
+@Config(emulateSdk = 18)
+@RunWith(RobolectricTestRunner.class)
+public class PodcastSearchClientFactoryTest {
+    @Test
     public void testGetGPodderInstance() throws Exception {
         PodcastSearchClientFactory clientInstance = PodcastSearchClientFactory.getInstance(new NoCache());
         PodcastSearchClient searchClient = clientInstance.getSearchClient(Services.GPODDER);
-        assertEquals(GPodderPodcastSearchClient.class, searchClient.getClass());
+        assertThat(searchClient).isInstanceOf(GPodderPodcastSearchClient.class);
     }
-
 }

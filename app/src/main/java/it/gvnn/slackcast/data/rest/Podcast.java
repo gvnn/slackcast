@@ -1,9 +1,11 @@
-package it.gvnn.slackcast.model;
+package it.gvnn.slackcast.data.rest;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 import java.util.List;
+
+import it.gvnn.slackcast.data.rest.Episode;
 
 public class Podcast implements Serializable {
     String website;

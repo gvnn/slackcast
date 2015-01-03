@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 
-import it.gvnn.slackcast.model.Podcast;
+import it.gvnn.slackcast.data.rest.Podcast;
 import it.gvnn.slackcast.search.PodcastDataResponse;
 import it.gvnn.slackcast.search.PodcastEpisodesAdapter;
 import it.gvnn.slackcast.search.PodcastSearchClient;
