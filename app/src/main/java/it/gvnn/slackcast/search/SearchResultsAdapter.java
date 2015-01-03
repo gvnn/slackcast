@@ -28,7 +28,7 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
     public SearchResultsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                               int viewType) {
         RelativeLayout v = (RelativeLayout) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.search_result_card, parent, false);
+                .inflate(R.layout.card_search_result, parent, false);
         return new ViewHolder(v);
     }
 

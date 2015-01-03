@@ -3,6 +3,8 @@ package it.gvnn.slackcast;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
@@ -12,6 +14,7 @@ import com.android.volley.VolleyError;
 
 import it.gvnn.slackcast.model.Podcast;
 import it.gvnn.slackcast.search.PodcastDataResponse;
+import it.gvnn.slackcast.search.PodcastEpisodesAdapter;
 import it.gvnn.slackcast.search.PodcastSearchClient;
 import it.gvnn.slackcast.search.PodcastSearchClientFactory;
 import it.gvnn.slackcast.search.Services;
@@ -19,10 +22,13 @@ import it.gvnn.slackcast.utils.VolleyResultListener;
 
 
 public class PodcastActivity extends ActionBarActivity {
-    private static final String TAG = "SearchActivity";
+    private static final String TAG = "PodcastActivity";
     private Toolbar mToolbar;
     private Podcast mPodcast;
     private PodcastSearchClient mPodcastSearchClient;
+    private RecyclerView mRecyclerView;
+    private LinearLayoutManager mLayoutManager;
+    private PodcastEpisodesAdapter mPodcastEpisodesAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +53,12 @@ public class PodcastActivity extends ActionBarActivity {
         mToolbar.setTitle(mPodcast.getTitle());
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_action_ic_close_white);
+
+        mRecyclerView = (RecyclerView) findViewById(R.id.eposides_recycler_view);
+        mLayoutManager = new LinearLayoutManager(getApplication());
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mPodcastEpisodesAdapter = new PodcastEpisodesAdapter();
+        mRecyclerView.setAdapter(mPodcastEpisodesAdapter);
 
         TextView podcastTitleView = (TextView) findViewById(R.id.podcast_detail_title);
         podcastTitleView.setText(mPodcast.getTitle());
@@ -78,7 +90,8 @@ public class PodcastActivity extends ActionBarActivity {
     }
 
     private void updateUI(PodcastDataResponse response) {
-
+        mPodcastEpisodesAdapter.updateDataset(response.get(0).getEpisodes());
+        mPodcastEpisodesAdapter.notifyDataSetChanged();
     }
 
     @Override
