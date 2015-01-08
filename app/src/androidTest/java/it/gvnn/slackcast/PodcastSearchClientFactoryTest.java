@@ -14,7 +14,6 @@ import it.gvnn.slackcast.search.Services;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Config(emulateSdk = 18)
 @RunWith(RobolectricTestRunner.class)
 public class PodcastSearchClientFactoryTest {
     @Test

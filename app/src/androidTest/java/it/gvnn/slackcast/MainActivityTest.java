@@ -7,7 +7,6 @@ import org.robolectric.annotation.Config;
 
 import static org.assertj.core.api.Assertions.*;
 
-@Config(emulateSdk = 18)
 @RunWith(RobolectricTestRunner.class)
 public class MainActivityTest {
     @Test
