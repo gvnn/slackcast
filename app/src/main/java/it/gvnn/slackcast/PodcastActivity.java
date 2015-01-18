@@ -8,16 +8,19 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 
-import it.gvnn.slackcast.data.rest.Podcast;
+import it.gvnn.slackcast.search.Podcast;
 import it.gvnn.slackcast.search.PodcastDataResponse;
 import it.gvnn.slackcast.search.PodcastEpisodesAdapter;
 import it.gvnn.slackcast.search.PodcastSearchClient;
 import it.gvnn.slackcast.search.PodcastSearchClientFactory;
-import it.gvnn.slackcast.search.Services;
+import it.gvnn.slackcast.search.Providers;
+import it.gvnn.slackcast.services.SubscriptionService;
 import it.gvnn.slackcast.utils.VolleyResultListener;
 
 
@@ -68,13 +71,21 @@ public class PodcastActivity extends ActionBarActivity {
 
         // load podcast info
         loadPodcastInfo();
+
+        final Button button = (Button) findViewById(R.id.podcast_subscribe_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                SubscriptionService subscriptionService = SubscriptionService.getInstance();
+                subscriptionService.addPodcast(mPodcast);
+            }
+        });
     }
 
     private void loadPodcastInfo() {
         Log.i(TAG, String.format("Loading details of %s", mPodcast.getUrl()));
 
         PodcastSearchClientFactory mPodcastSearchClientFactory = PodcastSearchClientFactory.getInstance(getCacheDir());
-        mPodcastSearchClient = mPodcastSearchClientFactory.getSearchClient(Services.GPODDER);
+        mPodcastSearchClient = mPodcastSearchClientFactory.getSearchClient(Providers.GPODDER);
         mPodcastSearchClient.getPodcast(mPodcast.getUrl(), new VolleyResultListener<PodcastDataResponse>() {
             @Override
             public void onResult(PodcastDataResponse response) {

@@ -48,6 +48,15 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".EpisodeActivity"
+            android:label="@string/title_activity_episode">
+            <intent-filter>
+                <action android:name="it.gvnn.slackcast.EPISODE_DETAIL" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <meta-data
             android:name="AA_DB_NAME"
             android:value="it.gvnn.slackcast.db" />
@@ -56,7 +65,7 @@
             android:value="1" />
         <meta-data
             android:name="AA_MODELS"
-            android:value="it.gvnn.slackcast.data.model.Podcast, it.gvnn.slackcast.data.model.Episode" />
+            android:value="it.gvnn.slackcast.entities.Podcast, it.gvnn.slackcast.entities.Episode" />
 
     </application>
 

@@ -16,8 +16,8 @@ import com.android.volley.VolleyError;
 import it.gvnn.slackcast.search.PodcastSearchClient;
 import it.gvnn.slackcast.search.PodcastSearchClientFactory;
 import it.gvnn.slackcast.search.PodcastSearchResponse;
+import it.gvnn.slackcast.search.Providers;
 import it.gvnn.slackcast.search.SearchResultsAdapter;
-import it.gvnn.slackcast.search.Services;
 import it.gvnn.slackcast.utils.VolleyResultListener;
 
 
@@ -65,7 +65,7 @@ public class SearchActivity extends ActionBarActivity {
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
 
             PodcastSearchClientFactory mPodcastSearchClientFactory = PodcastSearchClientFactory.getInstance(getCacheDir());
-            mPodcastSearchClient = mPodcastSearchClientFactory.getSearchClient(Services.GPODDER);
+            mPodcastSearchClient = mPodcastSearchClientFactory.getSearchClient(Providers.GPODDER);
 
             String query = intent.getStringExtra(SearchManager.QUERY);
             mToolbar.setTitle(query);

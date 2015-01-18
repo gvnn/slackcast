@@ -1,5 +1,5 @@
 package it.gvnn.slackcast.search;
 
-public enum Services {
+public enum Providers {
     GPODDER
 }

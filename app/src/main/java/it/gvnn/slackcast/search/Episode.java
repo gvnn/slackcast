@@ -1,4 +1,4 @@
-package it.gvnn.slackcast.data.rest;
+package it.gvnn.slackcast.search;
 
 import com.google.gson.annotations.SerializedName;
 

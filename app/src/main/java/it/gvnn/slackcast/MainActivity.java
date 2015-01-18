@@ -13,7 +13,7 @@ import com.android.volley.RequestQueue;
 
 import it.gvnn.slackcast.search.PodcastSearchClient;
 import it.gvnn.slackcast.search.PodcastSearchClientFactory;
-import it.gvnn.slackcast.search.Services;
+import it.gvnn.slackcast.search.Providers;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -29,7 +29,7 @@ public class MainActivity extends ActionBarActivity {
 
         // Set up the search client
         PodcastSearchClientFactory clientInstance = PodcastSearchClientFactory.getInstance(this.getCacheDir());
-        searchClient = clientInstance.getSearchClient(Services.GPODDER);
+        searchClient = clientInstance.getSearchClient(Providers.GPODDER);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
         setSupportActionBar(mToolbar);

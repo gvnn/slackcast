@@ -14,5 +14,8 @@
     <string name="podcast_detail_description">@string/lorem_ipsum</string>
     <string name="podcast_episode_description">@string/lorem_ipsum</string>
     <string name="podcast_episode_title">Episode title</string>
+    <string name="title_activity_episode">EpisodetActivity</string>
+    <string name="podcast_episode_download_button">Download</string>
+    <string name="podcast_subscribe_button">Subscribe</string>
 
 </resources>

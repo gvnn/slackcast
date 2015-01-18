@@ -1,4 +1,4 @@
-package it.gvnn.slackcast.data.model;
+package it.gvnn.slackcast.entities;
 
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
@@ -8,8 +8,16 @@ import java.util.List;
 
 @Table(name = "podcasts")
 public class Podcast extends Model {
+
     @Column(name = "title")
     public String title;
+
+    public Podcast() {
+    }
+
+    public Podcast(it.gvnn.slackcast.search.Podcast podcast) {
+        this.title = podcast.getTitle();
+    }
 
     public List<Episode> episodes() {
         return getMany(Episode.class, "podcast");

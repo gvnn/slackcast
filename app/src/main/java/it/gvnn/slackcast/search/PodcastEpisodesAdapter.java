@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.gvnn.slackcast.R;
-import it.gvnn.slackcast.data.rest.Episode;
 
 public class PodcastEpisodesAdapter extends RecyclerView.Adapter<PodcastEpisodesAdapter.ViewHolder> {
 

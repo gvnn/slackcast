@@ -45,8 +45,8 @@ public class PodcastSearchClientFactory {
         mRequestQueue.start();
     }
 
-    public PodcastSearchClient getSearchClient(Services service) {
-        if (service == Services.GPODDER)
+    public PodcastSearchClient getSearchClient(Providers service) {
+        if (service == Providers.GPODDER)
             return GPodderPodcastSearchClient.getInstance(mRequestQueue);
         return null;
     }
